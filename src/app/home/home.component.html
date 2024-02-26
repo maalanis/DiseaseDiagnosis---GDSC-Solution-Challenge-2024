@@ -1,0 +1,45 @@
+<!-- home.component.html -->
+<div class="welcome-container">
+  <h1>Welcome to Disease Diagnosis</h1>
+  <h2>Mobile Diagnosis</h2>
+
+  <div class="input-group">
+    <form>
+      <mat-form-field>
+        <input type="text" matInput [formControl]="symptomsControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSymptomSelect($event.option.value)">
+          <!-- Use availableSymptoms for filtering -->
+          <mat-option *ngFor="let symptom of availableSymptoms" [value]="symptom">
+            {{ symptom }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+    <button (click)="calculate()" class="calculate">Calculate</button>
+    <button (click)="clear()" class="cancel">Cancel</button>
+  </div>
+
+  <div class="selected-symptoms">
+    <div *ngFor="let symptom of selectedSymptoms; let i = index" class="symptom-tag">
+      {{ symptom }}
+      <button class="remove-btn" (click)="removeSymptom(i)">X</button>
+    </div>
+  </div>
+</div>
+
+<!-- Display the highest disease match -->
+<div *ngIf="highestDisease" class="highest-disease">
+  <p>Highest Match: {{ highestDisease.name }} - {{ highestDisease.value | percent }}</p>
+</div>
+
+<!-- Loading Placeholder -->
+<!-- Loading Placeholder -->
+<div class="loading-container" *ngIf="isLoadingDiseaseInfo">
+  <p>Loading Gemini Response<span class="dots">...</span></p>
+</div>
+
+<!-- Display the disease information as Markdown -->
+<div *ngIf="diseaseInfo && !isLoadingDiseaseInfo">
+  <div markdown [data]="diseaseInfo"></div>
+</div>

@@ -1,0 +1,223 @@
+/* home.component.css */
+
+/*@import '@angular/material/prebuilt-themes/indigo-pink.css'; */
+
+:host {
+    display: block;
+    padding: 20px;
+    background-color: #f5f5f5; /* Light grey background */
+  }
+  /* Overrides for Angular Material Typography */
+
+
+  body.mat-typography {
+    margin: 0;
+    /* Other styles to reset the unwanted spacing */
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    margin-right: 8px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+    width: 60%; /* Taking up 60% of the container width */
+    font-size: 16px; /* Larger font size for better readability */
+  }
+
+  .welcome-container {
+    text-align: center; /* Centers text elements */
+    display: flex; /* Use flexbox to center block-level contents */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically if there's extra space */
+    margin-bottom: 20px; /* Add some space below the container */
+    margin-top: 0px;
+  }
+/* home.component.css */
+.welcome-container h1 {
+  color: #333; /* Dark grey color */
+  font-size: 44px; /* Large font size */
+  font-weight: normal;
+  margin-bottom: 4px; /* Spacing between title and subtitle */
+  text-align: center; /* Center align the text */
+}
+
+
+/* home.component.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Use the full height of the viewport */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.info-container {
+  width: 100%; /* Or some other maximum width */
+  max-width: 600px; /* Or your preferred max-width */
+  background-color: #f7f7f7; /* Just an example */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dots {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 20px;
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  40% {
+    color: black;
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  60% {
+    text-shadow:
+      .25em 0 0 black,
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 black,
+      .5em 0 0 black;
+  }
+
+
+}
+
+.disease-info-container b {
+  color: #333; /* Darker color for bold text */
+  font-weight: bold;
+}
+
+.disease-info-container p, .disease-info-container ul {
+  margin-left: 20px;
+}
+
+.disease-info-container {
+  line-height: 1.6; /* Improve line spacing for readability */
+}
+
+
+
+.disease-info-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+
+.welcome-container h2 {
+  color: #555; /* Slightly lighter grey color */
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 20px; /* Spacing between subtitle and input bar */
+  text-align: center;
+}
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  button.cancel {
+    background-color: #6c757d; /* Bootstrap secondary grey */
+    margin-left: 5px; /* Adjust the value as needed */
+  }
+
+  button.cancel:hover {
+    background-color: #545b62; /* Darker grey on hover */
+  }
+  button.calculate {
+    margin-right: 5px; /* Adjust the value as needed */
+  }
+
+  .input-group {
+    display: flex;
+    justify-content: center; /* Center the children horizontally */
+    align-items: center; /* Align the children vertically */
+    gap: 10px; /* Add space between the elements */
+  }
+
+  input[type="text"] {
+    flex: 1; /* Allows input to grow and fill the space */
+    /* Set a max-width if you want to limit how much it can grow */
+    max-width: 200px; /* Adjust this value as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px; /* Optional, if you want to keep some space on the right */
+  }
+
+ /* home.component.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.selected-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: white;
+}
+
+.symptom-tag {
+  padding: 5px 10px;
+  background-color: #007BFF;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.remove-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color:white;
+}
+
